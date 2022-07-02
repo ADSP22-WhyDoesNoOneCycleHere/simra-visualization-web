@@ -309,6 +309,7 @@ export default {
                 setTimeout(() => (this.loadingProgress = null), 1200);
             }
         },
+        //change
         /**
          * Determines the clicked sub view mode with regards to whether the incident
          * overlay is currently active or not.
@@ -327,6 +328,9 @@ export default {
                         break;
                     case 3: // Mixed popularity score
                         this.subViewMode = 39;
+                        break;
+                    case 4: // Mixed popularity score
+                        this.subViewMode = 49;
                         break;
                 }
             } else this.subViewMode = newSubViewMode;
