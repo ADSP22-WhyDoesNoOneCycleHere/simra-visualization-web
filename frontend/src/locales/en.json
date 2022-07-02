@@ -93,7 +93,8 @@
         "chosen": "Chosen",
         "combined": "Combined",
         "score": "Score",
-        "showIncidents": "Show Incident Markers"
+        "showIncidents": "Show Incident Markers",
+        "scoreInfra": "Score Infrastructure Type"
     },
     "statistics": {
         "title": "Statistics for",
