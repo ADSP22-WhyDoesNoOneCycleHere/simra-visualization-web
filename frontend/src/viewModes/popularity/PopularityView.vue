@@ -6,10 +6,14 @@
             || subViewMode === config.subViewModes.POPULARITY_AVOIDED
             || subViewMode === config.subViewModes.POPULARITY_CHOSEN
             || subViewMode === config.subViewModes.POPULARITY_SCORE
+            //change
+            || subViewMode === config.subViewModes.POPULARITY_SCORE_Infra
             || subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_COMBINED
             || subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_AVOIDED
             || subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_CHOSEN
             || subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_SCORE
+            //change
+            || subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_SCORE_Infra
         ">
             <b-tabs type="is-toggle-rounded"
                     :value="subViewMode"
@@ -20,6 +24,8 @@
                 <b-tab-item :label="$t('popularity.avoided')" icon="database"></b-tab-item>
                 <b-tab-item :label="$t('popularity.chosen')" icon="database"></b-tab-item>
                 <b-tab-item :label="$t('popularity.score')" icon="chart-area"></b-tab-item>
+                <!--change-->
+                <b-tab-item :label="$t('popularity.scoreInfra')" icon="database"></b-tab-item>
             </b-tabs>
         </div>
 
@@ -42,6 +48,13 @@
                 v-if="subViewMode === config.subViewModes.POPULARITY_SCORE"
                 :url="TILE_URL + '/tiles/popularity-score/{z}/{x}/{y}.png'"
             />
+            <!--infralayer change url to tiles folder-->
+             <l-tile-layer
+                v-if="subViewMode === config.subViewModes.POPULARITY_SCORE_Infra"
+                :url="TILE_URL + '/tiles/popularity-score/{z}/{x}/{y}.png'"
+            />
+
+
             <l-tile-layer
                 v-if="subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_COMBINED"
                 :url="TILE_URL + '/tiles/popularity_w-incidents_combined/{z}/{x}/{y}.png'"
@@ -58,6 +71,12 @@
                 v-if="subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_SCORE"
                 :url="TILE_URL + '/tiles/popularity_w-incidents_score/{z}/{x}/{y}.png'"
             />
+
+            <!--infralayer hange url to tiles folde-->
+            <l-tile-layer
+                v-if="subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_SCORE_Infra"
+                :url="TILE_URL + '/tiles/popularity_w-incidents_score/{z}/{x}/{y}.png'"
+            /> 
 
             <!-- Show all incidents -->
             <l-geo-json v-if="zoom > 15 && incidents && incidentsVisible"
@@ -252,6 +271,9 @@ export default {
                 case 3: // mixed score
                     this.switchToView(39);
                     break;
+                case 4: // score Infra
+                    this.switchToView(49);
+                    break;
                 case 9: // combined with incidents
                     this.switchToView(0);
                     break;
@@ -263,6 +285,9 @@ export default {
                     break;
                 case 39: // mixed score with incidents
                     this.switchToView(3);
+                    break;
+                 case 49: // mixed score with incidents Infra
+                    this.switchToView(4);
                     break;
             }
         }
