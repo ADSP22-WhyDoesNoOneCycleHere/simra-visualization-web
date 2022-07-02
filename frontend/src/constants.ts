@@ -29,10 +29,15 @@ let subViewModes = {
     POPULARITY_AVOIDED: 1,
     POPULARITY_CHOSEN: 2,
     POPULARITY_SCORE: 3,
+    //change------------
+    POPULARITY_SCORE_Infra: 4,
+    
     POPULARITY_W_INCIDENTS_COMBINED: 9,
     POPULARITY_W_INCIDENTS_AVOIDED: 19,
     POPULARITY_W_INCIDENTS_CHOSEN: 29,
     POPULARITY_W_INCIDENTS_SCORE: 39,
+    //change---------------------
+    POPULARITY_W_INCIDENTS_SCORE_Infra: 49,
 }
 
 let osmAttribution = " &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors";
