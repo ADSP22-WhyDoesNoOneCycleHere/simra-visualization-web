@@ -51,7 +51,7 @@
             <!--infralayer change url to tiles folder-->
              <l-tile-layer
                 v-if="subViewMode === config.subViewModes.POPULARITY_SCORE_Infra"
-                :url="TILE_URL + '/tiles/popularity-score/{z}/{x}/{y}.png'"
+                :url="TILE_URL + '/tiles/popularity-score-Infra/{z}/{x}/{y}.png'"
             />
 
 
@@ -75,7 +75,7 @@
             <!--infralayer hange url to tiles folde-->
             <l-tile-layer
                 v-if="subViewMode === config.subViewModes.POPULARITY_W_INCIDENTS_SCORE_Infra"
-                :url="TILE_URL + '/tiles/popularity_w-incidents_score/{z}/{x}/{y}.png'"
+                :url="TILE_URL + '/tiles/popularity-Infra_w-incidents_score/{z}/{x}/{y}.png'"
             /> 
 
             <!-- Show all incidents -->
